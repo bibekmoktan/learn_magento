@@ -1,0 +1,10 @@
+type Query {
+    postDetails (
+        info_id: Int @doc(description: "Search Docs List.")
+    ): PostDetails @resolver(class: "PracticeGraphql\\Graphql\\Model\\Resolver\\PostDetails") @doc(description: "Return details about a Blog Details.")
+}
+type PostDetails {
+    id: Int @doc(description: "The ID of a Post page.")
+    name: String @doc(description: "The Post name.")
+    lName : String @doc(description : " The last Name"   )
+}

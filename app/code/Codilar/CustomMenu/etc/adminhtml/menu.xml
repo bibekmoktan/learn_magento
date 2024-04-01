@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_CustomMenu::test" title="Custom Menu" module="Codilar_CustomMenu" sortOrder="51" resource="Codilar_CustomMenu::test"/>
+        <add id="Codilar_CustomMenu::test1"
+             title="manage post"
+             module="Codilar_CustomMenu"
+             sortOrder="10"
+             resource="Codilar_CustomMenu::test1"
+             parent="Codilar_CustomMenu::test"
+             action="Codilar/post"/>
+
+        <add id="Codilar_CustomMenu::test2"
+             title="config post"
+             module="Codilar_CustomMenu"
+             sortOrder="99"
+             parent="Codilar_CustomMenu::test"
+             resource="Codilar_CustomMenu::test2"
+             action="Codilar/post"/>
+    </menu>
+</config>

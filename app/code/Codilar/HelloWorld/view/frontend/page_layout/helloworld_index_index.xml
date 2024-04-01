@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Codilar\HelloWorld\Block\Index" name="leftContent" template="Codilar_HelloWorld::leftContent.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Codilar\HelloWorld\Block\Index" name="test" template="Codilar_HelloWorld::test.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Codilar\HelloWorld\Block\Index" name="rightContent" template="Codilar_HelloWorld::rightContent.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

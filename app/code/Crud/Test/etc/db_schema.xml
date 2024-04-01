@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="info" resource="default" engine="innodb"
+           comment=" Person information">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Person ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="30"
+                comment="Person Name"/>
+        <column xsi:type="varchar" name="lName" nullable="false" length="30"
+                comment="Person Last Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

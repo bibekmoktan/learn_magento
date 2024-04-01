@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var $block \Crud\Test\Block\Display
+ */
+$person = $block->getAllData();
+foreach ($person as $hero)
+?>
+<h1 style="color: red"><?= __(" Person Info :(") ?></h1>
+<form method="post" action="<?= $block->getPostUrl().'id/'. $hero->getData('id'); ?>">
+
+    <fieldset style="margin: 0 auto; width: 50%">
+        <div>
+            <label for="name"><?= __("Name") ?></label>
+            <input type="text" name="name"  value=""/>
+
+        </div>
+        <div>
+            <label for="production_company"><?= __("Last Name") ?></label>
+            <input type="text" name="lName" value=" "/>
+        </div>
+        <input type="submit" value="<?= __("Update Person") ?>" />
+
+    </fieldset>
+</form>
