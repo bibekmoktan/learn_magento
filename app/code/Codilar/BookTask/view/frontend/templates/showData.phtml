@@ -1,0 +1,70 @@
+<?php
+/**
+ * @var $block \Crud\Test\Block\Display
+ */
+
+$person = $block->getAllData();
+?>
+<?php if (count($person) > 0): ?>
+    <table border="1">
+        <tr>
+            <th><?= __("ID") ?></th>
+            <th><?= __("ISBN") ?></th>
+            <th><?= __("Title") ?></th>
+            <th><?= __("Author Name") ?></th>
+            <th><?= __("Category") ?></th>
+            <th><?= __("Edition") ?></th>
+            <th><?= __("Price") ?></th>
+        </tr>
+        <?php foreach ($person as $hero): ?>
+            <tr>
+                <td><?= $hero->getId() ?></td>
+                <td><?= $hero->getName() ?></td>
+                <td><?= $hero->getData('lName') ?></td>
+                <td><?= $hero->getData('lName') ?></td>
+                <td><?= $hero->getData('lName') ?></td>
+                <td><?= $hero->getData('lName') ?></td>
+                <td><?= $hero->getData('lName') ?></td>
+
+                <td><a href="<?= $block->getEditPageUrl().'id/'. $hero->getData('id');?>">Edit </a>
+                    <a href="<?= $block->getDeleteUrl().'id/'. $hero->getData('id');?>">Delete</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php else: ?>
+    <h1 style="color: red"><?= __(" Person Info :(") ?></h1>
+<?php endif; ?>
+<hr />
+<form method="post" action="<?= $block->getPostUrl() ?>">
+    <fieldset style="margin: 0 auto; width: 50%">
+        <div>
+            <label for="name"><?= __("Name") ?></label>
+            <input type="text" name="isbn"/>
+        </div>
+        <div>
+            <label for="production_company"><?= __("Last Name") ?></label>
+            <input type="text" name="title"/>
+        </div>
+
+        <div>
+            <label for="production_company"><?= __("Last Name") ?></label>
+            <input type="text" name="author"/>
+        </div>
+
+        <div>
+            <label for="production_company"><?= __("Last Name") ?></label>
+            <input type="text" name="category"/>
+        </div>
+
+        <div>
+            <label for="production_company"><?= __("Last Name") ?></label>
+            <input type="text" name="price"/>
+        </div>
+
+        <div>
+            <label for="production_company"><?= __("Last Name") ?></label>
+            <input type="text" name="lName"/>
+        </div>
+        <input type="submit" value="<?= __("Add person") ?>" />
+    </fieldset>
+</form>

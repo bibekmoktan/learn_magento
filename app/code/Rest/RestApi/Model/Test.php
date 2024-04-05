@@ -1,7 +1,7 @@
 <?php
 namespace Rest\RestApi\Model;
 
-use Rest\RestApi\Api\RestApiInterface;
+use Rest\RestApi\Api\Data\RestApiInterface;
 
 class Test implements RestApiInterface{
 

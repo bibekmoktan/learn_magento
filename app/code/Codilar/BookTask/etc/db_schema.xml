@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="book_info" resource="default" engine="innodb" comment="Book Information Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" comment="Entity ID" identity="true"/>
+        <column xsi:type="varchar" name="isbn" nullable="false" length="255" comment="ISBN"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="varchar" name="author_name" nullable="false" length="255" comment="Author Name"/>
+        <column xsi:type="varchar" name="category" nullable="false" length="255" comment="Category"/>
+        <column xsi:type="decimal" name="price" scale="2" precision="12" nullable="false" comment="Price"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="BOOK_INFO_ISBN_INDEX" indexType="unique">
+            <column name="isbn"/>
+        </index>
+    </table>
+</schema>
