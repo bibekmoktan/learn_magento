@@ -8,9 +8,9 @@ use Magento\Framework\Model\AbstractModel;
 
 class Data extends AbstractModel
 {
-    protected $_eventPrefix = 'info';
+    protected $_eventPrefix = 'book_info';
     protected function _construct()
     {
-        $this->_init('\Crud\Test\Model\ResourceModel\Data');
+        $this->_init('Codilar\BookTask\Model\ResourceModel\Data');
     }
 }

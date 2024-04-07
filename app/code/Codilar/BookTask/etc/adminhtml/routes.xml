@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="test" frontName="test">
+        <route id="books" frontName="books">
             <module name="Codilar_BookTask" before="Magento_Backend" />
         </route>
     </router>

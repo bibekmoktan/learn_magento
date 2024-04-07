@@ -1,6 +1,6 @@
 <?php
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'PracticeGraphql_Graphql',
+    'Codilar_GraphqlTask',
     __DIR__
 );

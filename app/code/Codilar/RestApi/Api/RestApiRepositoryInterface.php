@@ -1,5 +1,5 @@
 <?php
-namespace Rest\RestApi\Api;
+namespace Codilar\RestApi\Api;
 interface RestApiRepositoryInterface
 {
 
@@ -10,7 +10,7 @@ interface RestApiRepositoryInterface
      *
      * @param int $id
      *
-     * @return \Rest\RestApi\Api\Data\RestApiInterface
+     * @return \Codilar\RestApi\Api\Data\RestApiInterface
      */
     public function getById(int $id);
 

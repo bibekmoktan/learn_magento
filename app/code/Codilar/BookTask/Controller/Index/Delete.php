@@ -2,13 +2,12 @@
 
 namespace Codilar\BookTask\Controller\Index;
 
-use Crud\Test\Model\Data;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
-use Crud\Test\Model\DataFactory;
+use Codilar\BookTask\Model\DataFactory;
 
 class Delete extends Action
 {

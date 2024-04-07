@@ -33,6 +33,15 @@
             <container name="product.info.main" htmlTag="div" htmlClass="product-info-main" before="-">
 
                 <container name="product.info.price" label="Product info auxiliary container" htmlTag="div" htmlClass="product-info-price">
+                    <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.uid" template="Magento_Catalog::product/view/attribute1.phtml" after="product.info.price">
+                        <arguments>
+                            <argument name="at_call" xsi:type="string">getUID</argument>
+                            <argument name="at_code" xsi:type="string">UID</argument>
+                            <argument name="css_class" xsi:type="string">uid</argument>
+                            <argument name="at_label" xsi:type="string">none</argument>
+                            <argument name="title" translate="true" xsi:type="string">UID</argument>
+                        </arguments>
+                    </block>
                     <container name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku">
                         <container name="product.info.type" before="-"/>
                         <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" after="product.info.type">

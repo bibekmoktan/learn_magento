@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Test_HelloWorld::helloworld" title="Grid" module="Test_HelloWorld" sortOrder="51" resource="Test_HelloWorld::helloworld"/>
-        <add id="Test_HelloWorld::post"
-             title="Manage Posts"
-             module="Test_HelloWorld"
+        <add id="Codilar_BookTask::Task" title="Book Grid" module="Codilar_BookTask" sortOrder="51" resource="Codilar_BookTask::Book"/>
+        <add id="Codilar_BookTask::book"
+             title="Manage Books"
+             module="Codilar_BookTask"
              sortOrder="10"
-             action="test/index/index"
-             resource="Test_HelloWorld::post"
-             parent="Test_HelloWorld::helloworld" />
+             action="books/index/index"
+             resource="Codilar_Task::Task"
+             parent="Codilar_BookTask::Task" />
     </menu>
 </config>

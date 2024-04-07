@@ -1,12 +1,15 @@
 type Query {
     info (
-        info_id: Int @doc(description: "Search Docs List.")
-    ): PostDetails @resolver(class: "PracticeGraphql\\Graphql\\Model\\Resolver\\PostDetails") @doc(description: "Return details about a Blog Details.")
+        id: Int @doc(description: "Search Docs List.")
+    ): BookDetails @resolver(class: "Codilar\\GraphqlTask\\Model\\Resolver\\BookDetails") @doc(description: "Return details about a Books Details.")
 }
-type PostDetails {
-    id: Int @doc(description: "The ID of a Post page.")
-    name: String @doc(description: "The Post name.")
-    lName : String @doc(description : " The last Name"   )
+type BookDetails {
+    id: Int @doc(description: "This is id of book.")
+    isbn: String @doc(description: "This is book isbn.")
+    title : String @doc(description : " This  title"   )
+    author_name : String @doc(description : " This is Author Name"   )
+    category : String @doc(description : " This is category"   )
+    price : String @doc(description : " This is Price"   )
 }
 #type Mutation
 #{

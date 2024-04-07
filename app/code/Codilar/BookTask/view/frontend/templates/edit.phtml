@@ -6,19 +6,31 @@ $person = $block->getAllData();
 foreach ($person as $data)
 ?>
 <h1 style="color: red"><?= __(" Person Info :(") ?></h1>
-<form method="post" action="<?= $block->getPostUrl().'id/'. $data->getData('id'); ?>">
-
+<form method="post" action="<?= $block->getSaveUrl().'id/'. $data->getData('id'); ?>">
     <fieldset style="margin: 0 auto; width: 50%">
         <div>
-            <label for="name"><?= __("Name") ?></label>
-            <input type="text" name="name"  value=""/>
-
+            <label for="name"><?= __("ISBN") ?></label>
+            <input type="text" name="isbn"/>
         </div>
         <div>
-            <label for="production_company"><?= __("Last Name") ?></label>
-            <input type="text" name="lName" value=" "/>
+            <label for="production_company"><?= __("Title") ?></label>
+            <input type="text" name="title"/>
         </div>
-        <input type="submit" value="<?= __("Update Person") ?>" />
 
+        <div>
+            <label for="production_company"><?= __("Author Name") ?></label>
+            <input type="text" name="author"/>
+        </div>
+
+        <div>
+            <label for="production_company"><?= __("Category") ?></label>
+            <input type="text" name="category"/>
+        </div>
+
+        <div>
+            <label for="production_company"><?= __("Price") ?></label>
+            <input type="text" name="price"/>
+        </div>
+        <input type="submit" value="<?= __("Update Book Details") ?>" />
     </fieldset>
 </form>

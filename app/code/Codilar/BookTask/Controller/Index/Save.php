@@ -32,7 +32,10 @@ class Save extends Action
     public function execute()
     {
         $params = $this->getRequest()->getParams();
+//        var_dump($params);
+//        die();
         $id =$this->getRequest()->getParam('id');
+
         try {
             if(isset($id)){
                     $model = $this->data->create()->load($id);

@@ -10,8 +10,5 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
-        <index referenceId="BOOK_INFO_ISBN_INDEX" indexType="unique">
-            <column name="isbn"/>
-        </index>
     </table>
 </schema>

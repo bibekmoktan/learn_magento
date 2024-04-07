@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $block \Crud\Test\Block\Display
+ * @var $block \Codilar\BookTask\Block\Display
  */
 
 $person = $block->getAllData();
@@ -13,18 +13,16 @@ $person = $block->getAllData();
             <th><?= __("Title") ?></th>
             <th><?= __("Author Name") ?></th>
             <th><?= __("Category") ?></th>
-            <th><?= __("Edition") ?></th>
             <th><?= __("Price") ?></th>
         </tr>
         <?php foreach ($person as $hero): ?>
             <tr>
                 <td><?= $hero->getId() ?></td>
-                <td><?= $hero->getName() ?></td>
-                <td><?= $hero->getData('lName') ?></td>
-                <td><?= $hero->getData('lName') ?></td>
-                <td><?= $hero->getData('lName') ?></td>
-                <td><?= $hero->getData('lName') ?></td>
-                <td><?= $hero->getData('lName') ?></td>
+                <td><?= $hero->getData('isbn') ?></td>
+                <td><?= $hero->getData('title') ?></td>
+                <td><?= $hero->getData('author_name') ?></td>
+                <td><?= $hero->getData('category') ?></td>
+                <td><?= $hero->getData('price') ?></td>
 
                 <td><a href="<?= $block->getEditPageUrl().'id/'. $hero->getData('id');?>">Edit </a>
                     <a href="<?= $block->getDeleteUrl().'id/'. $hero->getData('id');?>">Delete</a></td>
@@ -35,36 +33,31 @@ $person = $block->getAllData();
     <h1 style="color: red"><?= __(" Person Info :(") ?></h1>
 <?php endif; ?>
 <hr />
-<form method="post" action="<?= $block->getPostUrl() ?>">
+<form method="post" action="<?= $block->getSaveUrl() ?>">
     <fieldset style="margin: 0 auto; width: 50%">
         <div>
-            <label for="name"><?= __("Name") ?></label>
+            <label for="name"><?= __("ISBN") ?></label>
             <input type="text" name="isbn"/>
         </div>
         <div>
-            <label for="production_company"><?= __("Last Name") ?></label>
+            <label for="production_company"><?= __("Title") ?></label>
             <input type="text" name="title"/>
         </div>
 
         <div>
-            <label for="production_company"><?= __("Last Name") ?></label>
+            <label for="production_company"><?= __("Author Name") ?></label>
             <input type="text" name="author"/>
         </div>
 
         <div>
-            <label for="production_company"><?= __("Last Name") ?></label>
+            <label for="production_company"><?= __("Category") ?></label>
             <input type="text" name="category"/>
         </div>
 
         <div>
-            <label for="production_company"><?= __("Last Name") ?></label>
+            <label for="production_company"><?= __("Price") ?></label>
             <input type="text" name="price"/>
         </div>
-
-        <div>
-            <label for="production_company"><?= __("Last Name") ?></label>
-            <input type="text" name="lName"/>
-        </div>
-        <input type="submit" value="<?= __("Add person") ?>" />
+        <input type="submit" value="<?= __("Add Book") ?>" />
     </fieldset>
 </form>

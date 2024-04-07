@@ -347,19 +347,19 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'Codilar_BookTask' => 1,
-        'Codilar_HelloWorld' => 1,
-        'Demo_CronTest' => 1,
-        'Demo_Demo' => 1,
+        'Codilar_ConsoleCommand' => 1,
+        'Codilar_CronTask' => 1,
+        'Codilar_GraphqlTask' => 1,
+        'Codilar_RestApi' => 1,
+        'Codilar_TaskAttribute' => 1,
+        'Custom_Blog' => 1,
+        'Custom_PracticeGraphql' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_Smtp' => 0,
         'Mageplaza_SocialLogin' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
-        'PracticeGraphql_Graphql' => 1,
-        'ProductInfo_FetchProductInfo' => 1,
-        'Rest_RestApi' => 1,
         'Temando_ShippingRemover' => 1,
-        'Test_HelloWorld' => 1,
-        'Vendor_HelloWorld' => 0
+        'Vendor_HelloWorld' => 1
     ]
 ];

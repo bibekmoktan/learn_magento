@@ -3,22 +3,9 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->
-    <route url="/V1/custom/posts " method="GET">
-        <service class="Rest\RestApi\Api\RestApiInterface" method="getAllPost"/>
-        <resources>
-            <resource ref="anonymous"/>
-        </resources>
-    </route>
 
-    <route url="/V1/custom/posts/:id " method="GET">
-        <service class="Rest\RestApi\Api\RestApiInterface" method="getPost"/>
-        <resources>
-            <resource ref="anonymous"/>
-        </resources>
-    </route>
-
-    <route url="/V1/custom/info/:id " method="GET">
-        <service class="Rest\RestApi\Api\RestApiRepositoryInterface" method="getById"/>
+    <route url="/V1/custom/book/:id " method="GET">
+        <service class="Codilar\RestApi\Api\RestApiRepositoryInterface" method="getById"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>

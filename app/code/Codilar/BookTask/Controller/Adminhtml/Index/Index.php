@@ -4,7 +4,6 @@ namespace Codilar\BookTask\Controller\Adminhtml\Index;
 
 class Index extends \Magento\Backend\App\Action
 {
-    const ADMIN_RESOURCE = 'Test_HelloWorld::helloworld';
 
     protected $resultPageFactory = false;
 
@@ -20,7 +19,7 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Test')));
+        $resultPage->getConfig()->getTitle()->prepend((__('Books Details')));
         return $resultPage;
     }
 

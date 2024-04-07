@@ -1,10 +1,10 @@
 <?php
 
-namespace Rest\RestApi\Api\Data;
+namespace Codilar\RestApi\Api\Data;
 
 /**
  * Interface RestApiInterface
- * @package Rest\RestApi\Api\Data
+ * @package Codilar\RestApi\Api\Data
  */
 interface RestApiInterface
 {
@@ -28,28 +28,74 @@ interface RestApiInterface
      *
      * @return string|null
      */
-    public function getName();
+    public function getIsbn();
 
     /**
      * Set Name
      *
-     * @param string $name
+     * @param string $isbn
      * @return $this
      */
-    public function setName(string $name): RestApiInterface;
+    public function setIsbn(string $isbn): RestApiInterface;
 
     /**
      * Get Last Name
      *
      * @return string|null
      */
-    public function getlName();
+    public function getTitle();
 
     /**
      * Set Last Name
      *
-     * @param string $lName
+     * @param string $title
      * @return $this
      */
-    public function setlName(string $lName): RestApiInterface;
+    public function setTitle(string $title): RestApiInterface;
+
+    /**
+     * Get Last Name
+     *
+     * @return string|null
+     */
+    public function getAuthorName();
+
+    /**
+     * Set Last Name
+     *
+     * @param string $author
+     * @return $this
+     */
+    public function setAuthorName(string $author): RestApiInterface;
+
+    /**
+     * Get Last Name
+     *
+     * @return string|null
+     */
+    public function getCategory();
+
+    /**
+     * Set Last Name
+     *
+     * @param string $category
+     * @return $this
+     */
+    public function setCategory(string $category): RestApiInterface;
+
+    /**
+     * Get Last Name
+     *
+     * @return string|null
+     */
+    public function getPrice();
+
+    /**
+     * Set Last Name
+     *
+     * @param string $price
+     * @return $this
+     */
+    public function setPrice(string $price): RestApiInterface;
+
 }

@@ -10,8 +10,9 @@ use Magento\Framework\UrlInterface;
 class Action extends Column
 {
     /** Url path */
-    const ROW_EDIT_URL = 'test/index/newpost';
-    const ROW_DELETE_URL = 'test/index/deletepost' ;
+    const ROW_EDIT_URL = 'books/index/newpost';
+     /** Url path */
+    const ROW_DELETE_URL = 'books/index/deletebook';
     /** @var UrlInterface */
     protected $_urlBuilder;
 
@@ -53,21 +54,21 @@ class Action extends Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
                 $name = $this->getData('name');
-                if (isset($item['post_id'])) {
+                if (isset($item['id'])) {
                     $item[$name]['edit'] = [
                         'href' => $this->_urlBuilder->getUrl(
                             $this->_editUrl,
-                            ['id' => $item['post_id']]
+                            ['id' => $item['id']]
                         ),
                         'label' => __('Edit'),
                     ];
-                    $item[$name]['delete'] = [
+                     $item[$name]['delete'] = [
                         'href' => $this->_urlBuilder->getUrl(
                             self::ROW_DELETE_URL,
-                            ['id' => $item['post_id']]
+                            ['id' => $item['id']]
                         ),
                         'label' => __('Delete'),
-                        ];
+                    ];
                 }
             }
         }

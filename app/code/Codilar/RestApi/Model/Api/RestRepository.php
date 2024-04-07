@@ -1,10 +1,10 @@
 <?php
-namespace Rest\RestApi\Model\Api;
+namespace Codilar\RestApi\Model\Api;
 
-use Crud\Test\Model\DataFactory;
-use Crud\Test\Model\ResourceModel\Data as ObjectResourceModel;
+use Codilar\BookTask\Model\DataFactory;
+use Codilar\BookTask\Model\ResourceModel\Data as ObjectResourceModel;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Rest\RestApi\Api\RestApiRepositoryInterface;
+use Codilar\RestApi\Api\RestApiRepositoryInterface;
 
 
 /**
@@ -43,7 +43,7 @@ class RestRepository implements RestApiRepositoryInterface
      *
      * @param int $id
      *
-     * @return \Rest\RestApi\Api\Data\RestApiInterface
+     * @return \Codilar\RestApi\Api\Data\RestApiInterface
      */
 
     public function getById(int $id)

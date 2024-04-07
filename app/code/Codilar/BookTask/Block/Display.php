@@ -2,7 +2,7 @@
 
 namespace Codilar\BookTask\Block;
 
-use Crud\Test\Model\ResourceModel\Data\Collection;
+use  Codilar\BookTask\Model\ResourceModel\Data\Collection;
 use Magento\Framework\View\Element\Template;
 
 class Display extends Template
@@ -38,9 +38,9 @@ class Display extends Template
     /**
      * @return string
      */
-    public function getPostUrl()
+    public function getSaveUrl()
     {
-        return $this->getUrl('crud/index/save');
+        return $this->getUrl('book/index/save');
     }
 
     /**
@@ -48,13 +48,13 @@ class Display extends Template
      */
     public function getEditPageUrl()
     {
-        return $this->getUrl('crud/index/edit');
+        return $this->getUrl('book/index/edit');
     }
     /**
      * @return string
      */
     public function getDeleteUrl()
     {
-        return $this->getUrl('crud/index/delete');
+        return $this->getUrl('book/index/delete');
     }
 }
