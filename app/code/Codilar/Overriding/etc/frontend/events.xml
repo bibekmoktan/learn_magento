@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <event name="catalog_block_product_list_collection">
+        <observer name="observer_for_addProduct" instance="Codilar\Overriding\Observer\AddProduct"/>
+    </event>
+</config>

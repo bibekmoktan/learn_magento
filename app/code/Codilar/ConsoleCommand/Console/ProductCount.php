@@ -35,7 +35,6 @@ class ProductCount extends Command
        *
        * @return int
       */
-
       public function execute(InputInterface $input, OutputInterface $output)
     {
         $products =$this->collectionFactory->create()->addAttributeToSelect('name');

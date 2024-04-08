@@ -2,7 +2,7 @@
 $product = $block->getProduct();
 $attrData = $product->getData('UID');
 $blockTitle = $this->getData('title');
-if (trim($attrData) !== "") : ?>
+if ($attrData !== "") : ?>
     <div class="product-full-width-section">
         <h2 class="product-section-title"><?= $blockTitle; ?></h2>
         <?php echo $attrData; ?>

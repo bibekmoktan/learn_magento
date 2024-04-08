@@ -32,10 +32,6 @@ class RestRepository implements RestApiRepositoryInterface
         $this->objectResourceModel  = $objectResourceModel;
     }
 
-//    public function save($data)
-//    {
-//
-//    }
     /**
      * get test Api data.
      *

@@ -350,16 +350,16 @@ return [
         'Codilar_ConsoleCommand' => 1,
         'Codilar_CronTask' => 1,
         'Codilar_GraphqlTask' => 1,
+        'Codilar_HelloWorld' => 1,
+        'Codilar_Overriding' => 1,
         'Codilar_RestApi' => 1,
         'Codilar_TaskAttribute' => 1,
-        'Custom_Blog' => 1,
-        'Custom_PracticeGraphql' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_Smtp' => 0,
         'Mageplaza_SocialLogin' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1,
-        'Vendor_HelloWorld' => 1
+        'Vendor_HelloWorld' => 0
     ]
 ];

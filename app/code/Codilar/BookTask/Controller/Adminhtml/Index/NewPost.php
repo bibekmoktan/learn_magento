@@ -17,7 +17,7 @@ class NewPost extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Add New Post')));
+        $resultPage->getConfig()->getTitle()->prepend((__('Add New Books')));
 
         return $resultPage;
     }
