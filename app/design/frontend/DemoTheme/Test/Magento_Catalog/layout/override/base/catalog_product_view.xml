@@ -212,5 +212,6 @@
                 name="product_viewed_counter"
                 template="Magento_Catalog::product/view/counter.phtml"/>
         </referenceContainer>
+
     </body>
 </page>

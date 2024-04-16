@@ -6,12 +6,9 @@ use Magento\Framework\View\Result\PageFactory;
 class Config extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
-    protected $helperData;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-
-
         PageFactory $pageFactory,
 
     )

@@ -13,7 +13,6 @@ class Config extends \Magento\Framework\View\Element\Template
         \Magento\Framework\View\Element\Template\Context $context,
         Data $helperData
     )
-
 {
     $this->helperData = $helperData;
         parent::__construct($context);

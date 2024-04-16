@@ -353,6 +353,7 @@ return [
         'Codilar_HelloWorld' => 1,
         'Codilar_Overriding' => 1,
         'Codilar_RestApi' => 1,
+        'Codilar_SystemConfigExample' => 1,
         'Codilar_TaskAttribute' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_Smtp' => 0,
@@ -360,6 +361,6 @@ return [
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1,
-        'Vendor_HelloWorld' => 0
+        'Vendor_HelloWorld' => 1
     ]
 ];

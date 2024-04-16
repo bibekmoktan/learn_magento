@@ -8,7 +8,7 @@ use Magento\Store\Model\ScopeInterface;
 class Data extends AbstractHelper
 {
 
-    const XML_PATH_CONFIG = 'config/';
+    const XML_PATH_GENERAL = 'config_system/general/';
 
     public function getConfigValue($field, $storeId = null)
     {
@@ -20,7 +20,7 @@ class Data extends AbstractHelper
     public function getGeneralConfig($code, $storeId = null)
     {
 
-        return $this->getConfigValue(self::XML_PATH_CONFIG .'general/'. $code, $storeId);
+        return $this->getConfigValue(self::XML_PATH_GENERAL. $code, $storeId);
     }
 
 }

@@ -9,7 +9,6 @@ class CronSet {
     public function __construct(LoggerInterface $logger) {
         $this->logger = $logger;
     }
-
     /**
      * Write to system.log
      *

@@ -78,6 +78,12 @@ $_helper = $block->getData('outputHelper');
 
                             <?= $block->getProductDetailsHtml($_product) ?>
 
+                            <?php if ($_product->getCustomAttribute('UID')) : ?>
+                                <div class="uid">
+                                    <span class="label"><?php echo __('UID'); ?>:</span>
+                                    <span class="value"><?php echo $_product->getCustomAttribute('UID')->getValue(); ?></span>
+                                </div>
+                            <?php endif; ?>
                             <div class="product-item-inner">
                                 <div class="product actions product-item-actions">
                                     <div class="actions-primary">
@@ -119,6 +125,7 @@ $_helper = $block->getData('outputHelper');
                                                     <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
                                             <?php endif; ?>
                                         <?php endif; ?>
+
                                     </div>
                                     <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
                                         /* @noEscape */ $secureRenderer->renderStyleAsTag(
