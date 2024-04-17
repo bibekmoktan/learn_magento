@@ -361,6 +361,6 @@ return [
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1,
-        'Vendor_HelloWorld' => 1
+        'Vendor_HelloWorld' => 0
     ]
 ];

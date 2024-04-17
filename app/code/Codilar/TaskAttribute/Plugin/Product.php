@@ -59,7 +59,7 @@ class Product
      */
     private function getIsFeatured($productId)
     {
-        return (bool)$this->productCollectionFactory->create()
+        return $this->productCollectionFactory->create()
             ->addFieldToFilter('entity_id', $productId)
             ->addFieldToSelect('is_featured')
             ->getFirstItem()
