@@ -37,15 +37,6 @@ class MassDelete extends \Magento\Backend\App\Action
             $collection = $this->filter->getCollection($this->collectionFactory->create());
             $count = 0;
 
-            // With Mass Action Filter Class
-
-            /*  foreach ($collection as $model) {
-                  $model = $this->postFactory->create()->load($model->getId());
-                  $model->delete();
-                  $count++;
-              }*/
-
-            //Without Mass Action Filter Class
             foreach ($ids['selected'] as $id) {
                 $model = $this->postFactory->create()->load($id);
                 $model->delete();

@@ -1,5 +1,4 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-
 <!--    <preference for="Magento\Catalog\Model\Product"  type="Codilar\Overriding\Model\Product" />-->
     <type name="Magento\Quote\Model\Quote">
             <plugin name="before_plugin_addToCart" type="Codilar\Overriding\Plugin\Product" sortOrder="1" disabled="false"/>

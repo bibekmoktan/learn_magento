@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Codilar\BookTask\Model\ResourceModel\Data;
-
 
 use Codilar\BookTask\Model\Data;
 use Codilar\BookTask\Model\ResourceModel\Data as ResourceModel;

@@ -26,7 +26,6 @@ class ProductCount extends Command
 
         parent::configure();
     }
-
     /**
      * Execute the command
      *

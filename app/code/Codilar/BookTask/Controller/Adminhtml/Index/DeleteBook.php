@@ -1,8 +1,9 @@
 <?php
 
 namespace Codilar\BookTask\Controller\Adminhtml\Index;
+use Magento\Backend\App\Action;
 
-class DeleteBook extends \Magento\Backend\App\Action
+class DeleteBook extends Action
 {
     protected $resultPageFactory = false;
     protected $dataFactory;

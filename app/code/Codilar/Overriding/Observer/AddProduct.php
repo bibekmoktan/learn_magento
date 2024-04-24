@@ -6,21 +6,21 @@ class AddProduct implements ObserverInterface
 {
     public function execute(Observer $observer)
     {
-        $collection = $observer->getData('collection');
+        $collection = $observer->getEvent()->getData('collection');
         foreach ($collection as $product)
         {
             $price=$product->getData('price');
+
             $name=$product->getData('name');
 
             if ($price < 50)
             {
-                $name.="It is cheap";
-            }
+                $price = 50;           }
             else
             {
-                 $name.= "It is expensive";
+                 $price = 100;
             }
-            $product->setData('name',$name);
+            $product->setPrice($price);
         }
     }
 }

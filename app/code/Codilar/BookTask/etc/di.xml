@@ -1,5 +1,4 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
@@ -13,4 +12,9 @@
             <argument name="resourceModel" xsi:type="string">Codilar\BookTask\Model\ResourceModel\Data</argument>
         </arguments>
     </virtualType>
+    <preference for="Codilar\BookTask\Api\Book\BookInterface"
+                type="Codilar\BookTask\Model\Api\Book"/>
+
+    <preference for="Codilar\BookTask\Api\BookRepositoryInterface"
+                type="Codilar\BookTask\Model\Api\BookRepository"/>
 </config>
