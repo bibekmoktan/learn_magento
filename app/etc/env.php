@@ -3,9 +3,12 @@ return [
     'backend' => [
         'frontName' => 'admin'
     ],
+    'remote_storage' => [
+        'driver' => 'file'
+    ],
     'cache' => [
         'graphql' => [
-            'id_salt' => 'OixvKxVsdg2YnueeBnSQrLmet3YRu9zn'
+            'id_salt' => '0gZVyrIvbUBuNZMH9YpwiGQVMFWfE5ku'
         ],
         'frontend' => [
             'default' => [
@@ -17,23 +20,23 @@ return [
         ],
         'allow_parallel_generation' => false
     ],
-    'remote_storage' => [
-        'driver' => 'file'
+    'config' => [
+        'async' => 0
     ],
     'queue' => [
         'consumers_wait_for_messages' => 1
     ],
     'crypt' => [
-        'key' => '44ed7247b991e54421dfb47e2ef31910'
+        'key' => 'base640dQzJNhhysCMpY1cXI4z0wQaJdARh/7fsv4QznOUAyo='
     ],
     'db' => [
         'table_prefix' => '',
         'connection' => [
             'default' => [
                 'host' => 'localhost',
-                'dbname' => 'magento',
-                'username' => 'sammy',
-                'password' => 'P@ssw0rd',
+                'dbname' => 'magento2',
+                'username' => 'magento',
+                'password' => 'password',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
@@ -72,14 +75,15 @@ return [
         'customer_notification' => 1,
         'config_integration' => 1,
         'config_integration_api' => 1,
+        'graphql_query_resolver_result' => 1,
         'full_page' => 1,
         'config_webservice' => 1,
         'translate' => 1
     ],
     'downloadable_domains' => [
-        'magento2.com'
+        'magento2.local'
     ],
     'install' => [
-        'date' => 'Tue, 19 Mar 2024 16:07:10 +0000'
+        'date' => 'Wed, 08 May 2024 15:31:16 +0000'
     ]
 ];

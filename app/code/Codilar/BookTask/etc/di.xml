@@ -12,9 +12,4 @@
             <argument name="resourceModel" xsi:type="string">Codilar\BookTask\Model\ResourceModel\Data</argument>
         </arguments>
     </virtualType>
-    <preference for="Codilar\BookTask\Api\Book\BookInterface"
-                type="Codilar\BookTask\Model\Api\Book"/>
-
-    <preference for="Codilar\BookTask\Api\BookRepositoryInterface"
-                type="Codilar\BookTask\Model\Api\BookRepository"/>
 </config>

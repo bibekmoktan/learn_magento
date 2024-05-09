@@ -2,7 +2,7 @@
 <!--    <preference for="Magento\Catalog\Model\Product"  type="Codilar\Overriding\Model\Product" />-->
     <type name="Magento\Quote\Model\Quote">
             <plugin name="before_plugin_addToCart" type="Codilar\Overriding\Plugin\Product" sortOrder="1" disabled="false"/>
-        <plugin name="after_plugin_" type="Codilar\Overriding\Plugin\ProductName" sortOrder="1" disabled="false"/>
+            <plugin name="after_plugin_" type="Codilar\Overriding\Plugin\ProductName" sortOrder="1" disabled="false"/>
     </type>
 <type name="Magento\Catalog\Model\Product">
     <plugin name="after_plugin_" type="Codilar\Overriding\Plugin\ProductName" sortOrder="1" disabled="false"/>
