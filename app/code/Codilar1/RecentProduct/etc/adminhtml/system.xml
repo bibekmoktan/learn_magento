@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config/etc/system_file.xsd">
+    <system>
+        <tab id="recent" translate="label" sortOrder="100">
+            <label>Latest Products</label>
+        </tab>
+        <section id="new_products" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>New Products</label>
+            <tab>recent</tab>
+            <resource>Vendor_NewProducts::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Products Settings</label>
+                <field id="days" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Days</label>
+                    <comment>Specify the number of days for new products</comment>
+                    <validate>validate-digits</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

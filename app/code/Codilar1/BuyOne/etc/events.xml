@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_product_add_after">
+        <observer name="codilar1_buyone_add_product" instance="Codilar1\BuyOne\Observer\AddProduct" />
+    </event>
+    <event name="checkout_cart_update_items_after">
+        <observer name="buyOne_update_free_product_quantity" instance="Codilar1\BuyOne\Observer\UpdateFreeProductQuantity"/>
+    </event>
+    <event name="sales_quote_remove_item">
+        <observer name="vendor_module_remove_paid_product" instance="Codilar1\BuyOne\Observer\RemoveFreeProductObserver" />
+    </event>
+</config>

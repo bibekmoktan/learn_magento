@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="codilar1_buyone" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Codilar1 BuyOne Configuration</label>
+            <tab>general</tab>
+            <resource>Codilar1_BuyOne::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="textarea_field" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Textarea</label>
+                    <comment>Enter custom text here</comment>
+                    <tooltip>Custom textarea field</tooltip>
+                    <frontend_class>textarea</frontend_class>
+                    <validate>required-entry</validate>
+                    <config_path>codilar1_buyone/general/textarea_field</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

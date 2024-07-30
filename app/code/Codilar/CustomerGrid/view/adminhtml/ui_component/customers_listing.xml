@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">customers_listing.listing_data_source</item>
+            <item name="deps" xsi:type="string">customers_listing.listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">customer_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string">Add New Customer</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">catalog/category/index</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Codilar\CustomerGrid\Ui\DataProvider\Customer\ListingDataProvider</argument>
+            <argument name="name" xsi:type="string">listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+   <listingToolbar name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sticky" xsi:type="boolean">true</item>
+            </item>
+        </argument> 
+        <filterSearch name="fulltext"/>
+        <paging name="listing_paging"/>
+        <exportButton name="export_button"/>
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="customblog/post/massDelete"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete Post</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+          <filterSearch name="fulltext">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="provider" xsi:type="string">customers_listing.listing_data_source</item>
+                    <item name="chipsProvider" xsi:type="string">customers_listing.customers_listing.listing_top.listing_filters_chips</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">customers_listing.customers_listing.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.search</item>
+                    </item>
+                </item>
+            </argument>
+        </filterSearch>
+           <filters name="listing_filters">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">listing_data_source</item>
+                        <item name="chipsProvider" xsi:type="string">listing_data_source.listing_top.listing_filters_chips</item>
+                        <item name="storageConfig" xsi:type="array">
+                            <item name="provider" xsi:type="string">listing_data_source.listing_top.bookmarks</item>
+                            <item name="namespace" xsi:type="string">current.search</item>
+                        </item>
+                    </item>
+                </argument>
+        </filters>
+    </listingToolbar>
+    <columns name="customer_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="entity_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <resizeDefaultWidth>25</resizeDefaultWidth>
+            </settings>
+        </column>
+        <column name="firstname">
+            <settings>
+                <filter>text</filter>
+                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+        <column name="phone_number" sortOrder="60">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Phone</label>
+            </settings>
+        </column>
+          <column name="email">
+            <settings>
+                <filter>text</filter>
+                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <label translate="true">Email</label>
+            </settings>
+        </column>
+
+          <column name="amount">
+            <settings>
+                <filter>text</filter>
+                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <label translate="true">Store Credit</label>
+            </settings>
+        </column>
+
+          <column name="order_count">
+            <settings>
+                <filter>text</filter>
+                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <label translate="true">Order Count</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

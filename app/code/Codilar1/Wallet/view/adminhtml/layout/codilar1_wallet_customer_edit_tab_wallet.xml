@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <Block name="customer_wallet_tab">
+        <block class="Codilar1\Wallet\Block\Adminhtml\Wallet\Grid" name="wallet.grid" as="wallet.grid"/>
+        <block class="Codilar1\Wallet\Block\Adminhtml\Additional" name="additional.block" as="additional.block" template="Codilar1_Wallet::additional.phtml"/>
+    </Block>
+</layout>
+

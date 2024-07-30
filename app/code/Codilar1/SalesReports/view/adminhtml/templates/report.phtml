@@ -1,0 +1,135 @@
+<?php
+
+use Codilar1\SalesReports\Block\Adminhtml\Reports;
+
+/** @var Reports $block */
+
+?>
+
+<div id="reportErrorMsg" style="color: red; padding: 20px 0px; font-size: 16px; font-weight: bold; display: none">
+    Please select any Report
+</div>
+<div id="toDateErrorMsg" style="color: red; padding: 20px 0px; font-size: 16px; font-weight: bold; display: none">
+    Please Enter To Date
+</div>
+<div id="fromDateErrorMsg" style="color: red; padding: 20px 0px; font-size: 16px; font-weight: bold; display: none">
+    Please Enter From Date
+</div>
+<div style="display: inline">
+    <span>From</span>
+    <input type="date" id="from_date" name="from_date" placeholder="From" style="margin-right: 15px">
+    <span>To</span>
+    <input type="date" id="to_date" name="to_date" placeholder="To" style="margin-right: 15px">
+   
+
+    <select name="report_type" id="report_type" style="margin-right: 15px">
+        <option value="0">Select one report</option>
+        <option value="1">Sales Orders</option>
+    </select>
+    <button id="report" type="button">Show Report</button>
+    <br>
+    <br>
+    <button id="report-download" type="button">Download Report</button>
+</div>
+<br>
+<div id="reportData"></div>
+
+<script>
+    require([
+        "jquery",
+        "mage/url"
+    ], function ($, urlBuilder) {
+        function toggleDownloadButton(selectedReport) {
+            if (selectedReport === "9") { 
+                $("#report-download-uae").show();
+                $("#report-download-qatar").show();
+            } else {
+                $("#report-download-uae").hide();
+                $("#report-download-qatar").hide();
+            }
+        }
+        // Function to handle the change event of the report type dropdown
+        $("#report_type").on("change", function () {
+            let selectedReport = $(this).val();
+            toggleDownloadButton(selectedReport);
+        });
+        $("#report").on("click", function () {
+
+            $("div[class^='report-']").hide();
+            $('#reportErrorMsg').hide();
+            $('#toDateErrorMsg').hide();
+            $('#fromDateErrorMsg').hide();
+
+            let reportNo = $('#report_type').val();
+            let toDate = $("#to_date").val();
+            let fromDate = $("#from_date").val();
+
+            console.log(reportNo);
+
+            if (reportNo !== "0") {
+
+                let url = "<?= $block->getReportUrl() ?>";
+                console.log(url);
+                let formData = {
+                    form_key: window.FORM_KEY,
+                    to_date: toDate,
+                    from_date: fromDate,
+                    report_type: reportNo
+                };
+                console.log(formData);
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: formData,
+                    success: function (response) {
+                        $("#reportData").html(response.output);
+                    },
+
+                    error: function (err) {
+                        console.log("ggggggggg",err.message)
+                    }
+                });
+                toggleDownloadButton(reportNo);
+            } else if (fromDate === "") {
+                $('#fromDateErrorMsg').show();
+            } else if (toDate === "") {
+                $('#toDateErrorMsg').show();
+            } else {
+                $('#reportErrorMsg').show();
+            }
+        });
+
+
+        
+        $("#report-download").on("click", function () {
+
+            $("div[class^='report-']").hide();
+            $('#reportErrorMsg').hide();
+            $('#toDateErrorMsg').hide();
+            $('#fromDateErrorMsg').hide();
+
+            let reportNo = $('#report_type').val();
+            let toDate = $("#to_date").val();
+            let fromDate = $("#from_date").val();
+
+
+            if (reportNo !== "0") {
+
+                let url = "<?= $block->getReportDownloadUrl() ?>";
+                console.log(url);
+
+                window.location.href = url + "?to_date=" + toDate + "&from_date=" + fromDate + "&report_type=" + reportNo;
+
+            } else if (fromDate === "") {
+                $('#fromDateErrorMsg').show();
+            } else if (toDate === "") {
+                $('#toDateErrorMsg').show();
+            } else {
+                $('#reportErrorMsg').show();
+            }
+        });
+    });
+
+</script>

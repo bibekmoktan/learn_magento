@@ -1,0 +1,40 @@
+<?php
+/** @var \Codilar1\RecentProduct\Block $block */
+$products = $block->getProductCollection();
+?>
+
+<div class="latest-product">
+    
+        <br>
+        <table style="font-family:arial,verdana" padding="2px" border="1" width="1500px" cellspacing="2" cellpadding="2">
+            <?php
+            $count = 1;
+            ?>
+            <tr style="text-align: center; line-height:30px;">
+                <td colspan="10" align="center"><?= __('Product Details') ?></td>
+            </tr>
+            <tr>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('ID') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Product Name') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('SKU') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Created At') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Updated At') ?></th>
+            </tr>
+            <?php
+            foreach ($products as $product) { ?>
+                <tr>
+                    <td style="text-align: center;line-height:30px;"><?= $product['entity_id'] ?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $product['name'] ?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $product['sku']?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $product['created_at']?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $product['updated_at']?></td>
+                </tr>
+                <?php
+                $count++;
+            } ?>
+        </table>
+    </div>
+
+
+
+

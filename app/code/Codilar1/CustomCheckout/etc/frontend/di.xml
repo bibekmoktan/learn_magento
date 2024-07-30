@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Sales\Block\Order\Totals" type="Codilar1\CustomCheckout\Block\Totals"/>
+
+    <type name="Magento\Checkout\Model\DefaultConfigProvider">
+        <plugin name="custom_tax_config_provider" type="Codilar1\CustomCheckout\Plugin\SaveConfig" />
+    </type>
+
+</config>
+
+

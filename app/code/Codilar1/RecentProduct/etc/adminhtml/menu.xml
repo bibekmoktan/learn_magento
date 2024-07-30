@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar1_RecentProduct::home" title="Recent Products"
+         module="Codilar1_RecentProduct"
+         sortOrder="10" 
+         action="recent/index/index"
+           resource="Magento_Reports::salesroot"/>
+    </menu>
+</config>

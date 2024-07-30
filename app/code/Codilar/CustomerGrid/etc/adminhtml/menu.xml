@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_CustomerGrid::home" title="Customer Listing"
+         module="Codilar_CustomerGrid" sortOrder="1000" 
+         parent="Magento_Customer::customer" resource="Magento_Catalog::categories" 
+         action="customers/index/index"/>
+    </menu>
+</config>

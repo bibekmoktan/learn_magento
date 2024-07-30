@@ -1,0 +1,74 @@
+<?php
+
+use Codilar1\SalesReports\Block\Adminhtml\Reports;
+
+/** @var Reports $block */
+
+$to = $block->getToData();
+$from = $block->getFromData();
+$reportType = $block->getReportTypeData();
+$momStoreStoreId = $block->getMomStoreId();
+$guestData = $block->getGuestData($to, $from);
+$loggedInCustomer = $block->getLoggedInData($to , $from)
+?>
+<?php if($reportType == 1){ ?>
+    <div class="report-1">
+        <br>
+        <table style="font-family:arial,verdana" padding="2px" border="1" width="1500px" cellspacing="2" cellpadding="2">
+            <?php
+
+            $count = 1;
+          
+            ?>
+
+            <tr style="text-align: center; line-height:30px;">
+                <td colspan="10" align="center"><?= __('Geust Customers') ?></td>
+            </tr>
+            <tr>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Order Count') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Sub-Total') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Grand Total') ?></th>
+            </tr>
+            <?php
+            foreach ($guestData as $guest) { ?>
+                <tr>
+                    <td style="text-align: center;line-height:30px;"><?= $guest['order_count'] ?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $guest['subtotal_sum'] ?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $guest['grandtotal_sum'] ?></td>
+                </tr>
+                <?php
+                $count++;
+            } ?>
+        </table>
+
+        <br> <br>
+
+        <table style="font-family:arial,verdana" padding="2px" border="1" width="1500px" cellspacing="2" cellpadding="2">
+            <?php
+
+            $count = 1;
+            
+            ?>
+
+            <tr style="text-align: center; line-height:30px;">
+                <td colspan="10" align="center"><?= __('Logged In Customers') ?></td>
+            </tr>
+            <tr>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Order Count') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Sub-Total') ?></th>
+                <th width="8%" style="background-color:#cccccc; white-space: nowrap;line-height:30px;"><?= __('Grand Total') ?></th>
+            </tr>
+            <?php
+            foreach ($loggedInCustomer as $logged) { ?>
+                <tr>
+                    <td style="text-align: center;line-height:30px;"><?= $logged['order_count'] ?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $logged['subtotal_sum'] ?></td>
+                    <td style="text-align: center;line-height:30px;"><?= $logged['grandtotal_sum'] ?></td>
+                </tr>
+                <?php
+                $count++;
+            } ?>
+        </table>
+
+    </div>
+<?php } ?>

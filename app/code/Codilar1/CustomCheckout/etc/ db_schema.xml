@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote" resource="default" engine="innodb">
+        <column name="custom_tax_amount" nullable="true" xsi:type="decimal" length="50" comment="Custom Tax"/>
+    </table>
+</schema>

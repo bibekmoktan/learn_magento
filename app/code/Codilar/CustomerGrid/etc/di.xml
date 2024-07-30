@@ -1,0 +1,40 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Codilar\CustomerGrid\Model\ResourceModel\Grid\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">customer_entity</argument>
+            <argument name="eventPrefix" xsi:type="string">grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">collection</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\CustomerGrid\Model\ResourceModel\Grid</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="listing_data_source" xsi:type="string">Codilar\CustomerGrid\Model\ResourceModel\Grid\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+
+<!-- 
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Codilar\CustomerGrid\Ui\DataProvider\Customer\ListingDataProvider">
+        <plugin name="md_grid_attributes" type="Codilar\CustomerGrid\Plugin\AddAttributesToUiDataProvider"/>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="listing_data_source" xsi:type="string">Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Collection" type="Codilar\CustomerGrid\Ui\DataProvider\Customer\Listing\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">customer_entity</argument>
+            
+            <argument name="resourceModel" xsi:type="string">Codilar\CustomerGrid\Model\ResourceModel\Customer</argument>
+        </arguments>
+    </virtualType>
+     <preference for="Magento\Customer\Model\ResourceModel\Grid\Collection" type="\CustomerGrid\Model\ResourceModel\Grid\Collection"/>
+</config> -->
